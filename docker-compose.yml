@@ -14,6 +14,7 @@ services:
       - app_network
 
   backend:
+    image: mooazsayyed/crud-backend:latest
     build: ./backend
     container_name: crud_app_backend
     ports:
@@ -28,6 +29,7 @@ services:
       - app_network
 
   frontend:
+    image: mooazsayyed/crud-frontend:latest
     build: ./frontend
     container_name: crud_app_frontend
     ports:

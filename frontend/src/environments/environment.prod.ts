@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://api.discoverdollar.mooazsayyed.live/api'
+  apiUrl: 'https://api.discoverdollar.mooazsayyed.live/api'
 };
