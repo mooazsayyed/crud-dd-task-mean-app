@@ -22,7 +22,10 @@ services:
     environment:
       PORT: 8080
       MONGODB_URI: mongodb://mongodb:27017/dd_db
-      NODE_ENV: development
+      NODE_ENV: production
+      FRONTEND_URL: https://discoverdollar.mooazsayyed.live,http://discoverdollar.mooazsayyed.live,https://www.discoverdollar.mooazsayyed.live,http://www.discoverdollar.mooazsayyed.live
+      API_URL: https://api.discoverdollar.mooazsayyed.live,http://api.discoverdollar.mooazsayyed.live
+      LOCAL_URL: http://localhost:8080
     depends_on:
       - mongodb
     networks:

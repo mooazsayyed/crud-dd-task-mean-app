@@ -17,12 +17,28 @@ const allowedOrigins = parseOrigins(
   process.env.LOCAL_URL
 );
 
+if (allowedOrigins.length === 0) {
+  console.warn("⚠️  WARNING: No CORS origins configured! Set FRONTEND_URL, API_URL, or LOCAL_URL env vars.");
+}
+
 const corsOptions = {
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g. server-to-server, curl, health checks)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    console.warn(`❌ CORS blocked request from origin: ${origin}`);
+    console.warn(`   Allowed origins: ${allowedOrigins.join(", ")}`);
+    return callback(new Error(`CORS: Origin ${origin} not allowed`));
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 };
+
+// Handle preflight OPTIONS requests explicitly
+app.options("*", cors(corsOptions));
 app.use(cors(corsOptions));
 
 console.log("CORS allowed origins:", allowedOrigins);
