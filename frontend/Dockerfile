@@ -3,10 +3,11 @@ FROM node:18-alpine
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install -g @angular/cli && npm install
+
+RUN npm install --legacy-peer-deps
 
 COPY . .
 
 EXPOSE 8081
 
-CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "8081"]
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "8081"]
