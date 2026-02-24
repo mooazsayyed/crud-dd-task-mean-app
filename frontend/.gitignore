@@ -13,6 +13,10 @@ yarn.lock
 /out-tsc
 /bazel-out
 
+# Angular cache
+/.angular/cache
+.sass-cache/
+
 # IDEs and editors
 .idea/
 .vscode/*
@@ -22,11 +26,7 @@ yarn.lock
 !.vscode/extensions.json
 .history/*
 
-# Angular
-/.angular/cache
-.sass-cache/
-
-# Miscellaneous
+# Testing
 /coverage
 /libpeerconnection.log
 testem.log
@@ -35,5 +35,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Environment
 .env
-.env/

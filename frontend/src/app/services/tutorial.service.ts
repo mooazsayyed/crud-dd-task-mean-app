@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Tutorial } from '../models/tutorial.model';
+import { environment } from '../../environments/environment';
 
-// Use relative path for API calls - works in Docker containers
-const baseUrl = '/api/tutorials';
+const baseUrl = `${environment.apiUrl}/tutorials`;
 
 @Injectable({
   providedIn: 'root'
