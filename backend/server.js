@@ -1,7 +1,19 @@
 const express = require("express");
-//const cors = require("cors");
+const cors = require("cors");
 
 const app = express();
+
+// CORS configuration - allow frontend origin
+const corsOptions = {
+  origin: [
+    "https://discoverdollar.mooazsayyed.live",
+    "http://localhost:8080"  // for local Angular dev
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+};
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
