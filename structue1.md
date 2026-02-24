@@ -1,0 +1,38 @@
+```
+└── 📁src
+    └── 📁app
+        └── 📁components
+            └── 📁add-tutorial
+                ├── add-tutorial.component.css
+                ├── add-tutorial.component.html
+                ├── add-tutorial.component.spec.ts
+                ├── add-tutorial.component.ts
+            └── 📁tutorial-details
+                ├── tutorial-details.component.css
+                ├── tutorial-details.component.html
+                ├── tutorial-details.component.spec.ts
+                ├── tutorial-details.component.ts
+            └── 📁tutorials-list
+                ├── tutorials-list.component.css
+                ├── tutorials-list.component.html
+                ├── tutorials-list.component.spec.ts
+                ├── tutorials-list.component.ts
+        └── 📁models
+            ├── tutorial.model.spec.ts
+            ├── tutorial.model.ts
+        └── 📁services
+            ├── tutorial.service.spec.ts
+            ├── tutorial.service.ts
+        ├── app-routing.module.ts
+        ├── app.component.css
+        ├── app.component.html
+        ├── app.component.spec.ts
+        ├── app.component.ts
+        ├── app.module.ts
+    └── 📁assets
+        ├── .gitkeep
+    ├── favicon.ico
+    ├── index.html
+    ├── main.ts
+    └── styles.css
+```
