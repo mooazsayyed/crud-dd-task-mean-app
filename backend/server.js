@@ -18,7 +18,7 @@ const allowedOrigins = parseOrigins(
 );
 
 if (allowedOrigins.length === 0) {
-  console.warn("⚠️  WARNING: No CORS origins configured! Set FRONTEND_URL, API_URL, or LOCAL_URL env vars.");
+  console.warn("WARNING: No CORS origins configured! Set FRONTEND_URL, API_URL, or LOCAL_URL env vars.");
 }
 
 const corsOptions = {
@@ -28,8 +28,8 @@ const corsOptions = {
     if (allowedOrigins.indexOf(origin) !== -1) {
       return callback(null, true);
     }
-    console.warn(`❌ CORS blocked request from origin: ${origin}`);
-    console.warn(`   Allowed origins: ${allowedOrigins.join(", ")}`);
+    console.warn(` CORS blocked request from origin: ${origin}`);
+    console.warn(` Allowed origins: ${allowedOrigins.join(", ")}`);
     return callback(new Error(`CORS: Origin ${origin} not allowed`));
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
